@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  surname: MyString
+  email: MyString
+  password_digest: MyString
+  is_admin: false
+  graduate: false
+  cohortId: one
+  work_remotely: false
+
+two:
+  name: MyString
+  surname: MyString
+  email: MyString
+  password_digest: MyString
+  is_admin: false
+  graduate: false
+  cohortId: two
+  work_remotely: false
