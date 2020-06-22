@@ -1,9 +1,9 @@
-class Api::V1::SessionController < ApplicationController 
+class Api::V1::SessionsController < ApplicationController 
 
 
 
-  def sing_up
-
+  def sign_up
+    pry
   end
 
 
