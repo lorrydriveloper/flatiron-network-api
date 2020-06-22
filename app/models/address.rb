@@ -21,6 +21,7 @@ class Address < ApplicationRecord
 
 
   # def reverse_geocode
+  # TODO: The only consistend return is formated address
   #   pry
   # end
 
