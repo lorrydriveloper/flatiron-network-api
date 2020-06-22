@@ -8,39 +8,6 @@
 #   movies = Movie.create([{name: name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-companies = [
-  {
-    name: 'Job Hunter',
-    logo: 'https://logopond.com/logos/b3958ca66429b7ca1c5af7d70e95ad78.png'
-  },
-  {
-    name: 'Google',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/235px-Google_%22G%22_Logo.svg.png'
-  },
-  {
-    name: 'Flatiron School',
-    logo: 'https://coursereport-s3-production.global.ssl.fastly.net/rich/rich_files/rich_files/999/s200/flatironschool.png'
-  }, {
-    name: 'Spotify',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/240px-Spotify_logo_without_text.svg.png'
-  },
-  {
-    name: 'Facebook',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/240px-Facebook_icon.svg.png'
-  }, {
-    name: 'IBM',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/200px-IBM_logo.svg.png'
-  },
-  {
-    name: 'NASA',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg'
-  },
-  {
-    name: 'LinkedIn',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Linkedin_icon.svg/240px-Linkedin_icon.svg.png'
-  }
-]
-
 def create_campus(name, location, courses = [])
   Campus.create(name: name) do |u|
     u.address = Address.create(plus_code: location)
@@ -69,15 +36,19 @@ campuses = [
   { name: 'Online', plus_code: '' }
 ]
 
-for campus in campuses do
-  create_campus(campus[:name], campus[:plus_code], courses_objects)
-end
-
+campuses.each{|campus|create_campus(campus[:name], campus[:plus_code], courses_objects)}
+  
 campus = Campus.find_or_create_by(name:'Online')
 
 course = Course.find_or_create_by(title:'Software Engineering')
 
-cohort = Cohort.create(campus:campus, course:course , graduation:Date.new(2020,7), cohort_lead:'Alex Aguilar')
+cohort = Cohort.create(
+  campus:campus, 
+  course:course , 
+  graduation:Date.new(2020,7), 
+  cohort_lead:'Alex Aguilar',
+  pace_option:'full_time'
+)
 
 user = User.create(
   name: 'Pedro David',
@@ -90,4 +61,5 @@ user = User.create(
 )
 
 user.cohort = cohort
+user.address = 
 user.save
