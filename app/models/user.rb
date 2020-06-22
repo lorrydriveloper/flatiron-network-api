@@ -3,7 +3,7 @@
 class User < ApplicationRecord
   has_secure_password
   belongs_to :cohort
-  belongs_to :company
+  belongs_to :company, optional: true
   has_one :address, as: :addressable
 end
 
