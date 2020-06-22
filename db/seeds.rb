@@ -90,3 +90,4 @@ user = User.create(
 )
 
 user.cohort = cohort
+user.save
