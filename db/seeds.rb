@@ -61,5 +61,5 @@ user = User.create(
 )
 
 user.cohort = cohort
-user.address = 
+user.address = Address.create(plus_code:'MG8V+CV Telford')
 user.save
