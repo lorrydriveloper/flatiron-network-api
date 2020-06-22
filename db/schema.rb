@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_22_124340) do
+ActiveRecord::Schema.define(version: 2020_06_22_141346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,7 +82,9 @@ ActiveRecord::Schema.define(version: 2020_06_22_124340) do
     t.boolean "work_remotely"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "company_id"
     t.index ["cohort_id"], name: "index_users_on_cohort_id"
+    t.index ["company_id"], name: "index_users_on_company_id"
   end
 
   add_foreign_key "campus_courses", "campus", column: "campus_id"
@@ -90,4 +92,5 @@ ActiveRecord::Schema.define(version: 2020_06_22_124340) do
   add_foreign_key "cohorts", "campus", column: "campus_id"
   add_foreign_key "cohorts", "courses"
   add_foreign_key "users", "cohorts"
+  add_foreign_key "users", "companies"
 end
