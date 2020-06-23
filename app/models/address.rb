@@ -27,7 +27,13 @@ class Address < ApplicationRecord
 
 
   def find_me
-    plus_code || [street, city, postcode, state, country].compact.join(', ')
+
+    if plus_code != ''
+       plus_code
+    else
+      [street, city, postcode, state, country].compact.join(', ')
+    end
+
   end
 end
 
