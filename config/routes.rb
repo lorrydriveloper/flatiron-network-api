@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :users
       resources :cohorts, only: %i[index]
       post '/sign_up' => 'sessions#sign_up'
+      post 'login' => 'sessions#login'
     end
   end
 end
