@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users
-      get '/sign_up' => 'sessions#sign_up'
+      resources :cohorts, only: %i[index]
+      post '/sign_up' => 'sessions#sign_up'
     end
   end
 end
