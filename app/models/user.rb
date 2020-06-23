@@ -5,9 +5,7 @@ class User < ApplicationRecord
   belongs_to :cohort
   belongs_to :company, optional: true
   has_one :address, as: :addressable
-  validates :address, presence: {
-    message: 'No Address provided'
-  }
+  validates_associated :address
 end
 
 # User.create(
