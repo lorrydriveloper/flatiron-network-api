@@ -16,6 +16,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :linkedIn
       t.string :portfolio
       t.string :blog
+      t.string :instagram
 
       t.timestamps
     end

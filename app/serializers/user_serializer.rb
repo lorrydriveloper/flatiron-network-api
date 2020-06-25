@@ -2,7 +2,7 @@
 
 class UserSerializer < ActiveModel::Serializer
   attributes :id, :name, :surname, :email, :password_digest,
-             :is_admin, :graduate, :cohort, :address, :company
+             :is_admin, :graduate, :cohort, :address, :company, :social
 
   def address
     if object.address
@@ -50,5 +50,16 @@ class UserSerializer < ActiveModel::Serializer
     else
       object.graduate ? 'Job seeker' : 'Still Studing'
     end
+  end
+
+  def social
+    {
+      facebook: object.facebook,
+      twitter: object.twitter,
+      linkedIn: object.linkedIn,
+      blog: object.blog,
+      portfolio: object.portfolio,
+      instragram: object.instragram
+    }
   end
 end
