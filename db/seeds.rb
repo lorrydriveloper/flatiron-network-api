@@ -36,18 +36,25 @@ campuses = [
   { name: 'Online', plus_code: '' }
 ]
 
-campuses.each{|campus|create_campus(campus[:name], campus[:plus_code], courses_objects)}
-  
-campus = Campus.find_or_create_by(name:'Online')
+campuses.each { |campus| create_campus(campus[:name], campus[:plus_code], courses_objects) }
 
-course = Course.find_or_create_by(title:'Software Engineering')
+campus = Campus.find_or_create_by(name: 'Online')
+
+course = Course.find_or_create_by(title: 'Software Engineering')
 
 cohort = Cohort.create(
-  campus:campus, 
-  course:course , 
-  graduation:Date.new(2020,7), 
-  cohort_lead:'Alex Aguilar',
-  pace_option:'full_time'
+  campus: campus,
+  course: course,
+  graduation: Date.new(2020, 7),
+  cohort_lead: 'Alex Aguilar',
+  pace_option: 'full_time'
+)
+Cohort.create(
+  campus: campus,
+  course: course,
+  graduation: Date.new(2020, 6),
+  cohort_lead: 'Morgan VanYperen',
+  pace_option: 'full_time'
 )
 
 user = User.create(
@@ -61,5 +68,5 @@ user = User.create(
 )
 
 user.cohort = cohort
-user.address = Address.create(plus_code:'MG8V+CV Telford')
+user.address = Address.create(plus_code: 'MG8V+CV Telford')
 user.save
