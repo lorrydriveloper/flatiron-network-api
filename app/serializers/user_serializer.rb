@@ -59,7 +59,7 @@ class UserSerializer < ActiveModel::Serializer
       linkedIn: object.linkedIn,
       blog: object.blog,
       portfolio: object.portfolio,
-      instragram: object.instragram
+      instagram: object.instagram
     }
   end
 end
