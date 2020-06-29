@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :surname, :email, :password_digest,
+  attributes :id, :name, :surname, :avatar, :email,
              :is_admin, :graduate, :cohort, :address, :company, :social
 
   def address
@@ -54,12 +54,13 @@ class UserSerializer < ActiveModel::Serializer
 
   def social
     {
-      facebook: object.facebook,
+      github: object.github,
       twitter: object.twitter,
       linkedIn: object.linkedIn,
+      facebook: object.facebook,
+      instagram: object.instagram,
       blog: object.blog,
-      portfolio: object.portfolio,
-      instagram: object.instagram
+      portfolio: object.portfolio
     }
   end
 end
