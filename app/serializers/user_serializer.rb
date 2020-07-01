@@ -8,7 +8,12 @@ class UserSerializer < ActiveModel::Serializer
     if object.address
       {
         latitude: object.address.latitude,
-        longitude: object.address.longitude
+        longitude: object.address.longitude,
+        street: object.address.street,
+        postcode: object.address.postcode,
+        city: object.address.city,
+        state: object.address.state,
+        country: object.address.country
       }
     end
   end
@@ -44,11 +49,13 @@ class UserSerializer < ActiveModel::Serializer
     if object.company
       {
         id: object.company.id,
-        name: object.company.name,
+        company_name: object.company.name,
         logo: object.company.logo
       }
     else
-      object.graduate ? 'Job seeker' : 'Still Studing'
+      {
+        company_name: object.graduate ? 'Job seeker' : 'Still Studing'
+      }
     end
   end
 
