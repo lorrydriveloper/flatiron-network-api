@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :users
+      resources :users, only: %i[index update]
       resources :cohorts, only: %i[index]
       resources :courses, only: %i[index]
       resources :campus, only: %i[index]

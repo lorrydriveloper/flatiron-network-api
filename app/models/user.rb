@@ -19,7 +19,7 @@ def email_validator
 
 def normalize_email
   self.email = email.downcase.strip
-  end
+end
 
 # User.create(
 #   name: 'test1',
