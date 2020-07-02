@@ -58,9 +58,9 @@ Cohort.create(
 )
 
 user = User.create(
-  name: 'Pedro David',
-  surname: 'Garcia Lopez',
-  email: 'reddevil_cero@hotmail.com',
+  name: 'Test',
+  surname: 'user 1',
+  email: 'test@email.com',
   password: '0000',
   is_admin: true,
   graduate: false,
@@ -68,5 +68,5 @@ user = User.create(
 )
 
 user.cohort = cohort
-user.address = Address.create(plus_code: 'MG8V+CV Telford')
+user.address = Address.create(plus_code: 'F4G7+62 Birmingham')
 user.save
