@@ -35,17 +35,25 @@ If you have any problem configuring the project don't hesitate to contact me
 
 ## installation
 
+install gems
+
 ```
  bundle install
 ```
+
+create DB
 
 ```
 rails db:setup
 ```
 
+run migrations
+
 ```
 rails db:migrate
 ```
+
+seed the DB with some data
 
 ```
 rails db:seed
