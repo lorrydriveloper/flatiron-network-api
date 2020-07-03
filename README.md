@@ -1,8 +1,8 @@
 # Flatrion network
 
-## [LIVE DEMO](https://flatiron-network.vercel.app/)
+## ## [LIVE Website](https://flatiron-network.vercel.app/) ---- [POST](https://dev.to/lorrydriveloper/flatiron-network-1kpo) ---- [VIDEO DEMO](https://www.youtube.com/watch?v=2mXa0UN7JN0&t=114s) 
 
-[FrontEnd](https://github.com/reddevilcero/flatiron-network-react) - The FrontEnd repository.
+[FrontEnd](https://github.com/lorrydriveloper/flatiron-network-react) - The FrontEnd repository.
 
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
