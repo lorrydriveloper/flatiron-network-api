@@ -1,6 +1,6 @@
 # Flatrion network
 
-## ## [LIVE Website](https://flatiron-network.vercel.app/) ---- [POST](https://dev.to/lorrydriveloper/flatiron-network-1kpo) ---- [VIDEO DEMO](https://www.youtube.com/watch?v=2mXa0UN7JN0&t=114s) 
+## [LIVE Website](https://flatiron-network.vercel.app/) ---- [POST](https://dev.to/lorrydriveloper/flatiron-network-1kpo) ---- [VIDEO DEMO](https://www.youtube.com/watch?v=2mXa0UN7JN0&t=114s) 
 
 [FrontEnd](https://github.com/lorrydriveloper/flatiron-network-react) - The FrontEnd repository.
 
