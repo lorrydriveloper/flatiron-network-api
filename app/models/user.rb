@@ -9,24 +9,25 @@ class User < ApplicationRecord
   before_validation :normalize_email
   validate :email_validator
   validates_associated :address
+
+  def email_validator
+    unless EmailAddress.valid? email
+      errors.add(:email, "#{email} is not a valid Email")
+     end
+  end
+
+  def normalize_email
+    self.email = email.downcase.strip
+  end
+
+  def update_from_api(params)
+    user_params = params.require(:user).permit(:name, :surname, :email)
+    address_params = params.require(:location).permit(:street, :postcode, :city,
+                                                      :country, :state, :latitude, :longitude)
+    social_params =  params.require(:social).permit(:github, :twitter, :linkedIn, :facebook, :instagram, :blog, :portfolio)
+
+    update_attributes(user_params) &&
+      update_attributes(social_params) &&
+      address.update_attributes(address_params)
+  end
 end
-
-def email_validator
-  unless EmailAddress.valid? email
-    errors.add(:email, "#{email} is not a valid Email")
-   end
- end
-
-def normalize_email
-  self.email = email.downcase.strip
-end
-
-# User.create(
-#   name: 'test1',
-#   surname: 'test',
-#   email: 'test@hotmail.com',
-#   password: '0000',
-#   is_admin: true,
-#   graduate: false,
-#   work_remotely: false
-# )
